@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>HabitGrower</title>
+</head>
+<body>
+	<h1>HabitGrower</h1>
+	<p>成長を習慣化していこう!!</p>
+	<form action="/submit-form" method="POST">
+		<label for="habit">記録したい習慣：</label>
+		<input type="text" id="habit" name="habit" required><br><br>
+		<label for="category">カテゴリ：</label>
+        <select name="category">
+			<option value = "exercise">運動</option>
+			<option value = "study">勉強</option>
+			<option value = "health">健康</option>
+			<option value = "etc">その他</option>
+        </select>
+        <br><br>
+		<label for="date">開始日を選択してください:</label>
+        <input type="date" id="date" name="date" required ><br><br>
+        <label for="frequency">頻度：</label>
+        <select name="frequency">
+			<option value = "1">週1日</option>
+			<option value = "2">週2日</option>
+			<option value = "3">週3日</option>
+			<option value = "4">週4日</option>
+			<option value = "5">週5日</option>
+			<option value = "6">週6日</option>
+			<option value = "7">週7日</option>
+        </select>
+        <br><br>
+        <input type="submit" value="送信">
+	</form>
+		
+		
+
+</body>
+</html>
