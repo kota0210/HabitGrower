@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>登録確認</title>
+ <link th:href="@{/css/styles.css}" rel="stylesheet">
+</head>
+<body>
+	<h1>登録確認</h1>
+	
+	<div th:object="${HabitRegistForm}">
+		<p>【記録する習慣】</p><br>
+		<p th:text="*{habit}"></p><br><br>
+		<p>【カテゴリ】</p><br>
+		<p th:text="*{category}"></p><br><br>
+		<p>【開始日】</p><br>
+		<p th:text="*{actDate}"></p><br><br>
+		<p>【頻度】</p><br>
+		<p th:text="*{frequency}"></p><br><br>
+		 
+	</div>
+	
+	<form th:action="@{/confirm-regist}" method="POST"
+			th:object="${HabitRegistForm}">
+    	<input type="hidden" th:field="*{habit}">
+    	<input type="hidden" th:field="*{category}">
+    	<input type="hidden" th:field="*{actDate}">
+    	<input type="hidden" th:field="*{frequency}">
+    	<input type="submit" value="登録実行" class="btn">
+   	</form>
+	
+	<form th:action="@{/show-review-form-ret}" method="POST"
+			th:object="${HabitRegistForm}">
+    	<input type="hidden" th:field="*{habit}">
+    	<input type="hidden" th:field="*{category}">
+    	<input type="hidden" th:field="*{actDate}">
+    	<input type="hidden" th:field="*{frequency}">
+    	<input type="submit" value="もどる" class="btn">
+   	</form>
+	
+	
+</body>
+</html>
