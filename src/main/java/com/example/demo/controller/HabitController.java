@@ -1,6 +1,8 @@
 package com.example.demo.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,7 +20,16 @@ public class HabitController {
 
 //	
 	@PostMapping("/regist-review")
-	public String regist(@ModelAttribute HabitRegistForm form) {
+	public String regist(@Validated @ModelAttribute HabitRegistForm form,
+			BindingResult result) {
+		
+//		入力エラーがある場合にはレビュー登録画面に戻す
+		if(result.hasErrors()) {
+			return "regist-review";
+		}
+		
+//		正常な場合にはレビュー登録確認画面に遷移する
+		
 		return "regist";
 	}
 }

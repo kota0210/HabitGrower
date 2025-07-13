@@ -11,6 +11,7 @@
 	<form action="/submit-form" method="POST">
 		<label for="habit">記録する習慣：</label>
 		<input type="text" id="habit" name="habit" required><br><br>
+		<div th:if="${#fields.hasErrors('habit')}" th:errors="*{habit}"></div>
 		<label for="category">カテゴリ：</label>
         <select name="category">
 			<option value = "exercise">運動</option>
@@ -21,6 +22,7 @@
         <br><br>
 		<label for="date">開始日を選択してください:</label>
         <input type="date" id="date" name="date" required ><br><br>
+        <div th:if="${#fields.hasErrors('date')}" th:errors="*{date}"></div>
         <label for="frequency">頻度：</label>
         <select name="frequency">
 			<option value = "1">週1日</option>
