@@ -12,6 +12,11 @@ import com.example.demo.form.HabitRegistForm;
 @Controller
 public class HabitController {
 	
+//	習慣の新しい登録か進捗の登録か選択
+	@GetMapping("/select-regist-progress")
+	public String showSelect() {
+		return "Select";
+	}
 //	習慣の登録画面表示
 	@GetMapping("/regist-form")
 	public String showRegist() {
