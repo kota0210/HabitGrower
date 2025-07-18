@@ -17,20 +17,20 @@ public class HabitController {
 	public String showSelect() {
 		return "Select";
 	}
-//	習慣の登録画面表示
+//	新しい習慣の登録画面表示
 	@GetMapping("/regist-form")
 	public String showRegist() {
 		return "regist";
 	}
 
-//	
+//	新しい習慣の登録内容に入力ミスがないか確認
 	@PostMapping("/regist-review")
 	public String regist(@Validated @ModelAttribute HabitRegistForm form,
 			BindingResult result) {
 		
 //		入力エラーがある場合にはレビュー登録画面に戻す
 		if(result.hasErrors()) {
-			return "regist-review";
+			return "regist";
 		}
 		
 //		正常な場合にはレビュー登録確認画面に遷移する
